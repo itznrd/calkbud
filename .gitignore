@@ -1,0 +1,14 @@
+# Binaries
+/calc
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test coverage
+*.out
+
+# IDEs
+.vscode/
+.idea/
