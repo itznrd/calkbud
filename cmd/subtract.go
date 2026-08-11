@@ -9,7 +9,7 @@ import (
 
 var subtractcmd = &cobra.Command{
 	Use: "sub <num> <num>",
-	Short: "adds two number",
+	Short: "Subtract second number from the first number",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 

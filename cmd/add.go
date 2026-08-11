@@ -9,7 +9,7 @@ import (
 
 var addcmd = &cobra.Command{
 	Use: "add <num> <num>",
-	Short: "adds two number",
+	Short: "add two numbers",
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 
