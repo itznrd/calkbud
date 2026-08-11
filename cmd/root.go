@@ -12,6 +12,8 @@ func Execute() {
 
 	rootcmd.AddCommand(addcmd)
 	rootcmd.AddCommand(subtractcmd)
+	rootcmd.AddCommand(multiplycmd)
+	rootcmd.AddCommand(dividecmd)
 
 	rootcmd.Execute()
 }
