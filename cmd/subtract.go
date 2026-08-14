@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 
 	"github.com/spf13/cobra"
@@ -16,12 +17,12 @@ var subtractcmd = &cobra.Command{
 		num1, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
 			fmt.Println("Invalid input")
-			return
+			os.Exit(1)
 		}
 		num2, err := strconv.ParseFloat(args[1], 64)
 		if err != nil {
 			fmt.Println("Invalid input")
-			return
+			os.Exit(1)
 		}
 
 		result := num1 - num2
