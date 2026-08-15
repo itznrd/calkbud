@@ -15,5 +15,7 @@ func Execute() {
 	rootcmd.AddCommand(multiplycmd)
 	rootcmd.AddCommand(dividecmd)
 
+	rootcmd.AddCommand(evalcmd)
+
 	rootcmd.Execute()
 }
