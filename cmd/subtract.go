@@ -9,23 +9,29 @@ import (
 )
 
 var subtractcmd = &cobra.Command{
-	Use: "sub <num> <num>",
-	Short: "Subtract second number from the first number",
-	Args: cobra.ExactArgs(2),
+	Use: "sub [numbers...]",
+	Short: "Subtract consecutive numbers from the first number",
+	Args: cobra.MinimumNArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 
-		num1, err := strconv.ParseFloat(args[0], 64)
+		firstNum, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
-			fmt.Println("Invalid input")
+			fmt.Printf("Invalid number: %s\n", args[0])
 			os.Exit(1)
-		}
-		num2, err := strconv.ParseFloat(args[1], 64)
-		if err != nil {
-			fmt.Println("Invalid input")
+			}
+		
+		result := firstNum
+
+		for _, arg := range args[1:] {
+			num, err := strconv.ParseFloat(arg, 64)
+			if err != nil {
+			fmt.Printf("Invalid number: %s\n", arg)
 			os.Exit(1)
+			}
+
+			result -= num	
 		}
 
-		result := num1 - num2
 		fmt.Printf("%.2f\n", result)
 	},
 }
