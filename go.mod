@@ -1,4 +1,4 @@
-module calkbud
+module github.com/itznrd/calkbud
 
 go 1.26.5
 

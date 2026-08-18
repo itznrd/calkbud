@@ -1,7 +1,7 @@
 package main
 
 import (
-	"calkbud/cmd"
+	"github.com/itznrd/calkbud/cmd"
 )
 
 
