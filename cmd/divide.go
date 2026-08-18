@@ -9,27 +9,33 @@ import (
 )
 
 var dividecmd = &cobra.Command{
-	Use: "div <num> <num>",
-	Short: "divides the first number by the second number",
-	Args: cobra.ExactArgs(2),
+	Use: "div [numbers...]",
+	Short: "Divide the first number by consecutive numbers",
+	Args: cobra.MinimumNArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 
-		num1, err := strconv.ParseFloat(args[0], 64)
+		firstNum, err := strconv.ParseFloat(args[0], 64)
 		if err != nil {
-			fmt.Println("Invalid input")
+			fmt.Printf("Invalid number: %s\n", args[0])
 			os.Exit(1)
-		}
-		num2, err := strconv.ParseFloat(args[1], 64)
-		if err != nil {
-			fmt.Println("Invalid input")
-			os.Exit(1)
-		}
-		if num2 == 0 {
-			fmt.Println("can't divide by zero")
-			os.Exit(1)
+			}
+		
+		result := firstNum
+
+		for _, arg := range args[1:] {
+			num, err := strconv.ParseFloat(arg, 64)
+			if err != nil {
+				fmt.Printf("Invalid number: %s\n", arg)
+				os.Exit(1)
+			}
+			if num == 0 {
+				fmt.Println("Error: division by zero is not allowed")
+				os.Exit(1)
+			}
+
+			result /= num	
 		}
 
-		result := num1 / num2
 		fmt.Printf("%.2f\n", result)
 	},
 }
