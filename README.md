@@ -34,28 +34,28 @@ Then add the binary to your PATH or run it directly:
 
 ### Basic Commands
 
-**Add two numbers:**
+**Add numbers:**
 ```bash
-calkbud add 5 3
-# Output: 8.00
+calkbud add 5 3 2 10
+# Output: 20.00
 ```
 
 **Subtract:**
 ```bash
-calkbud sub 10 4
-# Output: 6.00
+calkbud sub 100 20 10
+# Output: 70.00
 ```
 
 **Multiply:**
 ```bash
-calkbud mul 7 6
-# Output: 42.00
+calkbud mul 2 3 4
+# Output: 24.00
 ```
 
 **Divide:**
 ```bash
-calkbud div 20 4
-# Output: 5.00
+calkbud div 100 2 5
+# Output: 10.00
 ```
 
 ### Expression Evaluation
