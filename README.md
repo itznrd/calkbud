@@ -14,9 +14,19 @@ Calkbud is a fast, lightweight command-line calculator built in Go for seamless 
 
 ### Prerequisites
 
-- Go 1.26.5 or higher
+- Go 1.26.5 or higher installed on your system
 
-### Build from Source
+### Install with Go
+
+After installing Go, run:
+
+```bash
+go install github.com/itznrd/calkbud@latest
+```
+
+The `calkbud` command will be installed in Go's bin directory. Make sure that directory is included in your system's `PATH`.
+
+### Or, Build from Source
 
 ```bash
 git clone https://github.com/your-org/calkbud.git
